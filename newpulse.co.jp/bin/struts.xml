@@ -1,0 +1,683 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+    <constant name="struts.multipart.maxSize" value="1000000" /> 
+	<!-- 引入登录模块 -->
+	<!--<include file="struts-login.xml"></include> -->
+	<package name="login" namespace="/xinan" extends="struts-default">
+		<action name="login" class="jp.newpulse.action.login.LoginAction">
+			<result name="success" >
+				<!--/xinan/index.jsp-->
+				/WEB-INF/main/search.jsp
+			</result>
+			<!--<result name="fail" type="redirect">
+				/xinan/index.jsp
+			</result>
+			-->
+		<!--<result name="success1" type="chain">
+			<param name="namespace">/xinan</param>
+			<param name="actionName">menu</param>
+		</result>-->
+		</action>
+		<action name="search" class="jp.newpulse.action.search.SearchAction">
+			<result name="success">
+				/WEB-INF/main/search.jsp
+			</result>
+		</action>
+		<action name="logout1" class="jp.newpulse.action.login.LogoutAction">
+			<result name="success">
+				/WEB-INF/main/search.jsp
+			</result>
+		</action>
+		
+		<action name="menu" class="jp.newpulse.action.alerm.AlarmStatus">
+			<result name="success">
+				/WEB-INF/main/menu.jsp
+			</result>
+		</action>
+		 
+		 <action name="user" class="jp.newpulse.action.user.InitFindUserAction" >
+			<result name="success">
+			/WEB-INF/main/user.jsp
+			</result>
+		</action>
+		
+		<action name="userfind" class="jp.newpulse.action.user.InitFindUserAction" >
+			<result name="success">
+			/WEB-INF/main/user.jsp
+			</result>
+		</action>
+		<action name="usertest1" class="jp.newpulse.action.user.ChangeUserAction" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<action name="adduser" class="jp.newpulse.action.user.AddUserAction">
+			<result name="success">
+			/WEB-INF/main/user.jsp
+			</result>
+		</action>
+			<action name="userList" class="jp.newpulse.action.user.SearchUserAction">
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+
+		<action name="usersign" class="jp.newpulse.action.user.GetUserSignAction">
+             <result name="success" type="stream">
+               <param name="contentType">application/octet-stream</param>
+               <param name="inputName">inputStream</param>
+               <param name="contentDisposition">attachment;filename="sign.jpg"</param>
+               <param name="bufferSize">bufferSize</param>
+             </result>
+		</action>
+		<action name="userseal" class="jp.newpulse.action.user.GetUserSealAction">
+             <result name="success" type="stream">
+               <param name="contentType">application/octet-stream</param>
+               <param name="inputName">inputStream</param>
+               <param name="contentDisposition">attachment;filename="seal.jpg"</param>
+               <param name="bufferSize">bufferSize</param>
+             </result>
+		</action>
+
+		<action name="deleuser" class="jp.newpulse.action.user.DeleUserAction" >
+			<result name="success">
+			/WEB-INF/main/user.jsp
+			</result>
+		</action>
+		<action name="changeSubUser" class="jp.newpulse.action.user.ChangeSubUserAction" >
+			<result name="success">
+			/WEB-INF/main/user.jsp
+			</result>
+		</action>
+		<!--見積書处理  -->
+		 <action name="quoteload" class="jp.newpulse.action.quote.QuoteLoad">
+			<result name="successJp">
+			/WEB-INF/main/quote.jsp
+			</result>
+			<result name="successCn">
+			/WEB-INF/main/quoteCn.jsp
+			</result>
+		</action>
+		<action name="customername" class="jp.newpulse.action.quote.LoadQuoteAction" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<action name="customeraddress" class="jp.newpulse.action.quote.AddressQuoteAction" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<action name="itemname" class="jp.newpulse.action.quote.LoadItemNameAction" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<action name="findItem" class="jp.newpulse.action.quote.FindItemAction" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<!-- 見積書添加处理 -->
+		<action name="addEstmationSheet" class="jp.newpulse.action.quote.AddEstmationSheet" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<!-- 未注文一览 -->
+		<!-- <action name="quoteorder" class="jp.newpulse.action.quote.NoApproveEstimationAction" >
+			<result name="success">
+			/WEB-INF/main/quoteorder.jsp
+			</result>
+		</action> -->
+		<!-- 明细插入 -->
+		<action name="addDetail" class="jp.newpulse.action.quote.AddEstmationDetail" >
+			<result name="success">
+			/WEB-INF/main/quote.jsp
+			</result>
+		</action>
+		<!-- 未注文見積書一览 -->
+		<action name="noOrderEstimation" class="jp.newpulse.action.quote.NoOrderEstimationAction" >
+			<result name="success">
+			/WEB-INF/main/quoteorder.jsp
+			</result>
+		</action>
+		<!-- 注文実績一覧 -->
+		<action name="orderall"  class="jp.newpulse.action.quote.OrderallFindAction">
+			<result name="success">
+			/WEB-INF/main/orderall.jsp
+			</result>
+		</action>
+		<!-- 見積実績一覧 -->
+		<action name="QuoteallFindAction"  class="jp.newpulse.action.quote.QuoteallFindAction">
+			<result name="success">
+			/WEB-INF/main/quoteall.jsp
+			</result>
+		</action>
+		<!--見積依頼書作成  -->
+		<action name="quotemake"  >
+			<result name="success">
+			/WEB-INF/main/quotemake.jsp
+			</result>
+		</action>
+		
+		
+		
+		
+		
+		<!--当月配送一覧部分######################################################################################  -->
+		
+		<!--当月配送一覧  -->
+		<action name="deliveryallLoad"  class="jp.newpulse.action.invoice.current_delivery_list.DeliveryLoadAction" >
+			<result name="success">
+			/WEB-INF/main/deliveryall.jsp
+			</result>
+		</action>
+		<!--当月配送一覧变更纳期  -->
+		<action name="naqiChangeAction"  class="jp.newpulse.action.invoice.current_delivery_list.NaqiChangeAction" >
+			<result name="success">
+			/WEB-INF/main/deliveryall.jsp
+			</result>
+		</action>
+		<!--当月配送一覧纳品完了 -->
+		<action name="napinFinshAction"  class="jp.newpulse.action.invoice.current_delivery_list.NapinFinshAction" >
+			<result name="success">
+			/WEB-INF/main/deliveryall.jsp
+			</result>
+		</action>
+		<!--#############################################################################################  -->
+		
+		
+		<!--翌月配送一覧部分######################################################################################  -->
+		<!--翌月以後配送一覧  -->
+		<action name="NextDeliveryLoadAction" class="jp.newpulse.action.invoice.next_delivery_list.NextDeliveryLoadAction" >
+			<result name="success">
+			/WEB-INF/main/nexdelivery.jsp
+			</result>
+		</action>
+		<!--次月配送一覧变更纳期  -->
+		<action name="naqiNextChangeAction"  class="jp.newpulse.action.invoice.next_delivery_list.NaqiNextChangeAction" >
+			<result name="success">
+			/WEB-INF/main/nexdelivery.jsp
+			</result>
+		</action>
+		<!--次月配送一覧纳品完了 -->
+		<action name="napinNextFinshAction"  class="jp.newpulse.action.invoice.next_delivery_list.NapinNextFinshAction" >
+			<result name="success">
+			/WEB-INF/main/nexdelivery.jsp
+			</result>
+		</action>
+		<!--#############################################################################################  -->
+		
+		
+		
+		<!--翌月以後配送一覧检索Action-->
+		<!-- <action name="NextDeliveryFindAction" class="jp.newpulse.action.invoice.NextDeliveryFindAction" >
+			<result name="success">
+			/WEB-INF/main/nexdelivery.jsp
+			</result>
+		</action> -->
+		
+		
+		<!--月度販売仕入取引対照表部分######################################################################################  -->
+		<!-- 月度販売仕入取引対照表Load -->
+		<action name="BeforeAfterLoadAction" class="jp.newpulse.action.invoice.monthly_trading_list.BeforeAfterLoadAction">
+			<result name="success">
+			/WEB-INF/main/beforeAfter.jsp
+			</result>
+		</action>
+		<!-- 月度販売仕入取引対照表Save -->
+		<action name="BeforeAfterSaveAction" class="jp.newpulse.action.invoice.monthly_trading_list.BeforeAfterSaveAction">
+			<result name="success">
+			/WEB-INF/main/beforeAfter.jsp
+			</result>
+		</action>
+		<!--#############################################################################################  -->
+		
+		
+		
+		<!--出荷済（売掛金）部分######################################################################################  -->
+		<!-- 出荷済（売掛金）一覧Load -->
+		<action name="ReceiveMoneyLoadAction" class="jp.newpulse.action.invoice.monthly_shipping_list.ReceiveMoneyLoadAction">
+			<result name="success">
+			 /WEB-INF/main/receivemoney.jsp
+			</result>
+		</action>
+		<!-- 出荷済（売掛金）一覧Find -->
+		<action name="ReceiveMoneyFindAction" class="jp.newpulse.action.invoice.monthly_shipping_list.ReceiveMoneyFindAction">
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<!-- 得意先別出荷済（売掛金）一覧Save -->
+		<action name="ReceiveMoneySaveAction" class="jp.newpulse.action.invoice.monthly_shipping_list.ReceiveMoneySaveAction">
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<!-- 得意先別出荷済（売掛金）一覧Find -->
+		<action name="ReceiveFindAction" class="jp.newpulse.action.invoice.monthly_shipping_list.ReceiveFindAction">
+			<result name="success">
+			<!-- /WEB-INF/main/receivemoney.jsp -->
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<!--#############################################################################################  -->
+		
+		
+		
+		<!--納品済（買掛金）部分######################################################################################  -->
+		<!-- 納品済（買掛金）一覧Load -->
+		<action name="PayMoneyLoadAction" class="jp.newpulse.action.invoice.monthly_arrival_list.PayMoneyLoadAction">
+			<result name="success">
+			/WEB-INF/main/paymoney.jsp
+			</result>
+		</action>
+		<!-- 入荷済み一覧Find -->
+		<action name="PayMoneyFindAction" class="jp.newpulse.action.invoice.monthly_arrival_list.PayMoneyFindAction">
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<!-- 仕入先別納品済（買掛金）一覧Save -->
+		<action name="PayMoneySaveAction" class="jp.newpulse.action.invoice.monthly_arrival_list.PayMoneySaveAction">
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<!-- 仕入先別納品済（買掛金）一覧Find -->
+		<action name="PayFindAction" class="jp.newpulse.action.invoice.monthly_arrival_list.PayFindAction">
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		
+		
+		<!--#############################################################################################  -->
+		
+		
+		<!--invoice部分######################################################################################  -->
+		<!-- 当月配送一覧到 invoice作成 -->
+		<action name="invoiceCreate"  class="jp.newpulse.action.invoice.InvoiceCreateAction">
+			<result name="success">
+			/WEB-INF/main/invoice.jsp
+			</result>
+		</action>
+		<!-- 当月配送一覧到 invoice修改 -->
+		<action name="invoiceChange"  class="jp.newpulse.action.invoice.InvoiceChange">
+			<result name="success">
+			/WEB-INF/main/invoicechange.jsp
+			</result>
+		</action>
+		<!-- INVOICE作成保存 -->
+		<action name="saveInvoicePAction"  class="jp.newpulse.action.invoice.saveInvoicePAction" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<!-- INVOICEDetail作成保存 -->
+		<action name="saveInDteailAction"  class="jp.newpulse.action.invoice.saveInDteailAction" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<!-- INVOICE承认 -->
+		<action name="InvoiceApprove"  class="jp.newpulse.action.invoice.InvoiceApprove" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<!-- INVOICEチェック -->
+		<action name="CheckInvoiceCd"  class="jp.newpulse.action.invoice.CheckInvoiceCd" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		
+		<!--#############################################################################################  -->
+		
+		
+		
+		<!--INVOICE实际一览部分######################################################################################  -->
+		<!-- INVOICE一覧 -->
+		<action name="invoiceallLoadAction"  class="jp.newpulse.action.invoice.invoice_list.InvoiceallLoadAction">
+			<result name="success">
+			/WEB-INF/main/invoiceall.jsp
+			</result>
+		</action>
+		<!-- INVOICE实际一览查询 -->
+		<action name="invoiceallFindAction"  class="jp.newpulse.action.invoice.invoice_list.InvoiceallFindAction" >
+			<result name="success">
+			/WEB-INF/main/invoiceall.jsp
+			</result>
+		</action>
+		<!-- INVOICE实际一览保存 -->
+		<action name="InvoicellSave"  class="jp.newpulse.action.invoice.invoice_list.InvoicellSave" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		
+		
+		<!--#############################################################################################  -->
+		
+		
+		
+		
+		
+		
+		<!--未承認見積・注文一覧  -->
+		<action name="quotenone" class="jp.newpulse.action.quote.FetchNoApproveList" >
+			<result name="success">
+			/WEB-INF/main/quotenone.jsp
+			</result>
+		</action>
+		<!-- 受注書 -->
+		<action name="loadEstmationConfirm" class="jp.newpulse.action.quote.LoadEstmationConfirm" >
+			<result name="success">/WEB-INF/main/estimationConfirm.jsp?EstimationId=${EstimationId}</result>
+		</action>
+		<action name="getEstmationSheet" class="jp.newpulse.action.quote.GetEstmationSheet" >
+			<result name="success">/WEB-INF/main/json.jsp</result>
+		</action>
+		<action name="getEstmationDetail" class="jp.newpulse.action.quote.GetEstmationDetail" >
+			<result name="success">/WEB-INF/main/json.jsp</result>
+		</action>
+		<action name="addEstmationConfirm" class="jp.newpulse.action.quote.AddEstmationConfirm" >
+			<result name="success">/WEB-INF/main/estimationConfirm.jsp</result>
+		</action>
+		  <!-- 得意 -->
+		<action name="customer" class="jp.newpulse.action.customer.CustomerAction">
+			<result name="success"> /WEB-INF/main/customer.jsp </result>
+		</action>
+		<action name="customerSearch" class="jp.newpulse.action.customer.CustomerSearchAction">
+			<result name="success"> /WEB-INF/main/json.jsp </result>
+		</action>
+		<action name="customerAdd" class="jp.newpulse.action.customer.CustomerAddAction">
+			<result name="success"> /WEB-INF/main/customer.jsp </result>
+		</action>
+		<action name="customerDel" class="jp.newpulse.action.customer.CustomerDelAction">
+			<result name="success"> /WEB-INF/main/customer.jsp </result>
+		</action>
+		 <!-- 注文做成 -->
+		<action name="ordermake" class="jp.newpulse.action.quote.OrderMakeAction">
+			<result name="successEN"> /WEB-INF/main/ordermake.jsp </result>
+			<result name="successJP"> /WEB-INF/main/ordermakeJp.jsp </result>
+			<result name="successCN"> /WEB-INF/main/ordermakeCn.jsp </result>
+		</action>  
+		 <!-- 供应商地址 -->
+		<action name="supplierAddress" class="jp.newpulse.action.quote.LoadSupplierAction" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<action name="suppliernames" class="jp.newpulse.action.quote.LoadSupplierNames" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		
+		<!-- 注文書添加处理 -->
+		<action name="addOrderSheet" class="jp.newpulse.action.quote.AddOrderSheet" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		
+			<!-- load注文書detail -->
+		<action name="loadOrderDetail" class="jp.newpulse.action.quote.LoadOrderDetail" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		
+		<!-- load注文書detail -->
+		<action name="addOrderDetail" class="jp.newpulse.action.quote.AddOrderDetail" >
+			<result name="success">
+			/WEB-INF/main/ordermake.jsp
+			</result>
+		</action>
+		<!-- 订货单确认添加处理 -->
+		<action name="addEstmationConfirmSheet" class="jp.newpulse.action.quote.AddEstmationConfirmSheet" >
+			<result name="success">
+			/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		
+		<!--見積書delete  -->
+		<action name="cancelEstimation" class="jp.newpulse.action.quote.DeleteEstimation" >
+			<result name="success">
+				/WEB-INF/main/quotenone.jsp
+			</result>
+		</action>
+		
+		<!--見積書approve  -->
+		<action name="approveEstimation" class="jp.newpulse.action.quote.ApproveEstimation" >
+			<result name="success">
+				/WEB-INF/main/quotenone.jsp
+			</result>
+		</action>
+		
+		<!--未承認見積一覧  -->
+		<action name="fetchNoApproveEstimationList" class="jp.newpulse.action.quote.FetchNoApproveEstimationList" >
+			<result name="success">
+				/WEB-INF/main/quotenone.jsp
+			</result>
+		</action>
+		
+		<!--注文delete  -->
+		<action name="cancelOrder" class="jp.newpulse.action.quote.DeleteOrder" >
+			<result name="success">
+				/WEB-INF/main/quotenone.jsp
+			</result>
+		</action>
+		
+		<!--注文approve  -->
+		<action name="approveOrder" class="jp.newpulse.action.quote.ApproveOrder" >
+			<result name="success">
+				/WEB-INF/main/quotenone.jsp
+			</result>
+		</action>
+		
+		<!--read未承认注文-->
+		<action name="readOrder" class="jp.newpulse.action.quote.ReadOrder">
+			<result name="successEN">
+				/WEB-INF/main/ordermake4check.jsp
+			</result>
+			<result name="successJP">
+				/WEB-INF/main/ordermake4checkJp.jsp
+			</result>
+			<result name="successCN">
+				/WEB-INF/main/ordermake4checkCn.jsp
+			</result>
+		</action>
+		
+		<!--read未承认报价单 -->
+		<action name="readEstimation" class="jp.newpulse.action.quote.ReadEstimation" >
+			<result name="successJP">
+				/WEB-INF/main/quote4check.jsp
+			</result>
+			<result name="successCN">
+				/WEB-INF/main/quote4checkCn.jsp
+			</result>
+		</action>
+		
+		<!--item master -->
+		<action name="item" class="jp.newpulse.action.item.ItemAction" >
+			<result name="success">
+				/WEB-INF/main/item.jsp
+			</result>
+		</action>
+		
+		<action name="seachItems" class="jp.newpulse.action.item.FindItemAction" >
+			<result name="success">
+				/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		
+		<action name="deleItem" class="jp.newpulse.action.item.DeleItemAction" >
+			<result name="success">
+				/WEB-INF/main/item.jsp
+			</result>
+		</action>
+		
+		<action name="saveItem" class="jp.newpulse.action.item.AddItemAction" >
+			<result name="success">
+				/WEB-INF/main/item.jsp
+			</result>
+		</action>
+		
+		<!-- supplier -->
+		<action name="supplier" class="jp.newpulse.action.supplier.SupplierAction" >
+			<result name="success">
+				/WEB-INF/main/supplier.jsp
+			</result>
+		</action>
+		
+		<action name="searchSupplier" class="jp.newpulse.action.supplier.SearchSupplierAction" >
+			<result name="success">
+				/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		
+		<action name="deleSupplier" class="jp.newpulse.action.supplier.DeleSupplierAction" >
+			<result name="success">
+				/WEB-INF/main/supplier.jsp
+			</result>
+		</action>
+		
+		<action name="saveSupplier" class="jp.newpulse.action.supplier.SaveSupplierAction" >
+			<result name="success">
+				/WEB-INF/main/supplier.jsp
+			</result>
+		</action>
+		
+		
+		<!--read注文detail-->
+		<action name="readOrderDetails" class="jp.newpulse.action.quote.ReadOrderDetails">
+			<result name="success">
+				/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		
+		<!--read注文sheet-->
+		<action name="readOrderSheet" class="jp.newpulse.action.quote.ReadOrderSheet">
+			<result name="success">
+				/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		
+		<!--readEstimationApproveStatus-->
+		<action name="readEstimationApproveStatus" class="jp.newpulse.action.approve.EstimationApproveStatus">
+			<result name="success">
+				/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		
+		<!--readOrderApproveStatus-->
+		<action name="readOrderApproveStatus" class="jp.newpulse.action.approve.OrderApproveStatus">
+			<result name="success">
+				/WEB-INF/main/json.jsp
+			</result>
+		</action>
+		<!--
+		<action name="quotemake" class="jp.newpulse.action.quote.QuoteMakeAction">
+			<result name="success">
+			/WEB-INF/main/quotemake.jsp
+			</result>
+		</action>
+		<action name="order" class="jp.newpulse.action.quote.QuoteMakeAction">
+			<result name="success">
+			/WEB-INF/main/order.jsp
+			</result>
+		</action>
+		 -->
+		<!-- Download未注文見積書一覧 -->
+		<action name="downloadUnapproved" class="jp.newpulse.action.quote.DownloadUnapprovedList" >
+			<result name="success" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">inputStream</param>
+			<param name="contentDisposition">attachment; filename="excelExport.xls"</param>
+			<param name="bufferSize">bufferSize</param>
+			</result>
+		</action>
+		<!-- Download見積実績一覧 -->
+		<action name="downloadEstimation" class="jp.newpulse.action.quote.DownloadEstimationList" >
+			<result name="success" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">inputStream</param>
+			<param name="contentDisposition">attachment; filename="excelExport.xls"</param>
+			<param name="bufferSize">bufferSize</param>
+			</result>
+		</action>
+		<!-- Download注文実績一覧 -->
+		<action name="downloadOrder" class="jp.newpulse.action.quote.DownloadOrderList" >
+			<result name="success" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">inputStream</param>
+			<param name="contentDisposition">attachment; filename="excelExport.xls"</param>
+			<param name="bufferSize">bufferSize</param>
+			</result>
+		</action>
+		<!-- Download　Invoice配送実績一覧 -->
+		<action name="downloadInvoice" class="jp.newpulse.action.invoice.invoice_list.DownloadInvoiceList" >
+			<result name="success" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">inputStream</param>
+			<param name="contentDisposition">attachment; filename="excelExport.xls"</param>
+			<param name="bufferSize">bufferSize</param>
+			</result>
+		</action>
+		<!-- Download月度販売仕入取引対照表 -->
+		<action name="downloadTrading" class="jp.newpulse.action.invoice.monthly_trading_list.DownloadMonthlyTradingList" >
+			<result name="success" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">inputStream</param>
+			<param name="contentDisposition">attachment; filename="excelExport.xls"</param>
+			<param name="bufferSize">bufferSize</param>
+			</result>
+		</action>
+		<!-- Download月末出荷済み統計一覧 -->
+		<action name="downloadShipping" class="jp.newpulse.action.invoice.monthly_shipping_list.DownloadMonthlyShippingList" >
+			<result name="success" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">inputStream</param>
+			<param name="contentDisposition">attachment; filename="excelExport.xls"</param>
+			<param name="bufferSize">bufferSize</param>
+			</result>
+		</action>
+		<!-- Download月末得意先別出荷済み一覧 -->
+		<action name="downloadCustomerShipping" class="jp.newpulse.action.invoice.monthly_shipping_list.DownloadCustomerMonthlyShippingList" >
+			<result name="success" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">inputStream</param>
+			<param name="contentDisposition">attachment; filename="excelExport.xls"</param>
+			<param name="bufferSize">bufferSize</param>
+			</result>
+		</action>
+		<!-- Download月末入荷済み統計一覧 -->
+		<action name="downloadArrival" class="jp.newpulse.action.invoice.monthly_arrival_list.DownloadMonthlyArrivalList" >
+			<result name="success" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">inputStream</param>
+			<param name="contentDisposition">attachment; filename="excelExport.xls"</param>
+			<param name="bufferSize">bufferSize</param>
+			</result>
+		</action>
+		<!-- Download月末仕入先別出荷済み一覧 -->														  
+		<action name="downloadSupplierArrival" class="jp.newpulse.action.invoice.monthly_arrival_list.DownloadSupplierMonthlyArrivalList" >
+			<result name="success" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">inputStream</param>
+			<param name="contentDisposition">attachment; filename="excelExport.xls"</param>
+			<param name="bufferSize">bufferSize</param>
+			</result>
+		</action>
+		<action name="getECurrency" class="jp.newpulse.action.quote.GetECurrency" >
+			<result name="success">/WEB-INF/main/json.jsp</result>
+		</action>
+	</package>
+</struts>

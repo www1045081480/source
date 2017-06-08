@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<report template="InvoiceList.xlsx">
+
+<sheet name="Invoice一覧">
+  <cells>
+    <cell row="3" col="C">$user.JpName</cell>
+    <cell row="4" col="C">$createDate</cell>
+  </cells>
+  
+  <list name="invoices" begin_row="7">
+    <cell col="B">$sheet.invoiceCd</cell>
+    <cell>$sheet.customerName</cell>
+    <cell>$sheet.orderCd</cell>
+    <cell>$sheet.issueDate</cell>
+    <cell>$sheet.itemName</cell>
+    <cell>$sheet.modelCd</cell>
+    <cell>$sheet.quantity</cell>
+    <cell>$sheet.amount</cell>
+    <cell>$sheet.shippingType</cell>
+    <cell>$sheet.carringAmount</cell>
+  </list>
+</sheet>
+</report>

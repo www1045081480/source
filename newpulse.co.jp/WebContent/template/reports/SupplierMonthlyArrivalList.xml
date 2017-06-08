@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<report template="SupplierMonthlyArrivalList.xlsx">
+<sheet name="買掛金一覧">
+  <cells>
+    <cell row="1" col="D">$yyyymm</cell>
+    <cell row="3" col="C">$user.JpName</cell>
+    <cell row="4" col="C">$createDate</cell>
+    <cell row="6" col="C">$supplierName</cell>
+  </cells>
+  
+  <list name="arrivals" begin_row="8">
+    <cell col="B">$sheet.payDate</cell>
+    <cell>$sheet.modelCd</cell>
+    <cell>$sheet.orderNo</cell>
+    <cell>$sheet.purchaseAmount</cell>
+    <cell>$sheet.exciseAmount</cell>
+    <cell>$sheet.totalAmount</cell>
+    <cell>$sheet.payAmount</cell>
+    <cell>$sheet.balance</cell>
+    <cell>$sheet.tradingNo</cell>
+    <cell>$sheet.note</cell>
+  </list>
+</sheet>
+</report>

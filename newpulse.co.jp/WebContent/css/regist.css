@@ -1,0 +1,147 @@
+@charset "utf-8";
+
+
+/*--------------------------------------------------------------------------------
+	�V�KWeb���[�U�[�o�^
+--------------------------------------------------------------------------------*/
+
+.regist,
+.regist_check,
+.addinfo,
+.addinfo_check {
+	margin: 20px auto 0;
+	width: 779px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background-color: #FFFFFF;
+}
+
+.nom .regist,
+.nom .regist_check {
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	background-color: #FFFFFF;
+}
+
+#regist_cont{
+	padding:0 50px;
+	width: 600px !important;
+	height:auto !important;  
+	text-align: left;
+}
+
+
+.regist #regist_cont .top_text,
+.regist_check #registcheck_cont .top_text,
+.addinfo #addinfo_cont .top_text,
+.addinfo_check #addinfocheck_cont .top_text {
+	font-size: 13px;
+	text-align: left;
+	margin-bottom:20px;
+}
+
+.regist #regist_cont table.regist_tbl,
+.regist_check #registcheck_cont table.regist_tbl,
+.addinfo #addinfo_cont table.regist_tbl,
+.addinfo_check #addinfocheck_cont table.regist_tbl {
+	margin-top: 10px;
+	border-collapse: collapse;
+}
+
+.regist #regist_cont table.regist_tbl th,
+.regist_check #registcheck_cont table.regist_tbl th,
+.addinfo #addinfo_cont table.regist_tbl th,
+.addinfo_check #addinfocheck_cont table.regist_tbl th {
+    padding: 5px 35px 5px 5px;
+    width: 110px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #005785;
+	background-color: #F2FBFF;
+	border: solid 1px #CCCCCC;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.regist #regist_cont table.regist_tbl td,
+.regist_check #registcheck_cont table.regist_tbl td,
+.addinfo #addinfo_cont table.regist_tbl td,
+.addinfo_check #addinfocheck_cont table.regist_tbl td {
+	padding:3px;
+	width: 433px;
+	border: solid 1px #CCCCCC;
+}
+
+.regist #regist_cont table.regist_tbl th.req,
+.regist_check #registcheck_cont table.regist_tbl th.req,
+.addinfo #addinfo_cont table.regist_tbl th.req {
+	background: #F2FBFF url(../images/req.png) no-repeat 115px 6px;
+}
+
+th.noreq{
+	background: #F2FBFF;
+}
+
+.regist #regist_cont table.regist_tbl ul.name_td_ul li {
+	float: left;
+	padding-right: 20px;
+}
+
+.regist #regist_cont table.regist_tbl ul.name_td_ul input {
+	margin-left: 5px;
+	width: 135px;
+}
+
+.regist #regist_cont table.regist_tbl ul.name_td_ul .sample {
+	font-size: 13px;
+	margin: 3px 0 0 20px;
+}
+
+.regist #regist_cont table.regist_tbl p.note {
+	margin-top:3px;
+	padding-left:1.0em;
+	text-indent:-1.0em;
+	font-size: 13px;
+	color:#CC0000;
+}
+
+.regist #regist_cont table.regist_tbl .sample2,
+.addinfo #addinfo_cont table.regist_tbl .sample2 {
+	font-size: 13px;
+	margin: 3px 0 0 3px;
+}
+
+.regist #regist_cont table.regist_tbl .tel_form {
+	width: 235px;
+}
+
+.regist #regist_cont table.regist_tbl .form_right_text {
+	margin-left: 5px;
+	font-size: 13px;
+}
+
+.regist #regist_cont table.regist_tbl .mail_form {
+	width: 285px;
+}
+
+.regist #regist_cont table.regist_tbl .password_form {
+	width: 115px;
+}
+
+.regist #regist_cont table.regist_tbl ul.mailmagazine_ul {
+	padding-bottom: 15px;
+}
+
+.regist #regist_cont table.regist_tbl ul.mailmagazine_ul li {
+	margin-top: 5px;
+}
+
+.regist #regist_cont table.regist_tbl ul.mailmagazine_ul input {
+	margin: 0 3px !important;
+	margin: 0;
+	padding: 0 3px;
+	vertical-align: middle;
+}
+

@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.field_error {
+	background-color: #ffafaf;
+	border-radius: 5px 5px 5px 5px;
+}
+
+.error_tip {
+	border: solid 1px #ffafaf;
+	z-index: 999;
+	position: absolute;
+	padding: 2px;
+	margin-left: 10px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+.field_error_top {
+	background-color: #ffafaf;
+	border-radius: 5px 5px 5px 5px;
+}
+
+.error_tip_top {
+	border: solid 1px #ffafaf;
+	z-index: 999;
+	position: absolute;
+	top: 0px;
+	left:-90px;
+	padding: 2px;
+	margin-left: 10px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+

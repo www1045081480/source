@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<report template="MonthlyTradingList.xlsx">
+<sheet name="取引対照表">
+  <cells>
+    <cell row="1" col="H">$yyyymm</cell>
+    <cell row="3" col="E">$user.JpName</cell>
+    <cell row="4" col="E">$createDate</cell>
+    <cell row="14" col="L">$jpSum.requireAmount</cell>
+    <cell row="14" col="U">$jpSum.sellAmount</cell>
+    <cell row="14" col="V">$jpSum.sellExcise</cell>
+    <cell row="14" col="W">$jpSum.grossMargin</cell>
+    <cell row="14" col="X">$jpSum.grossProfit</cell>
+    <cell row="15" col="L">$usSum.requireAmount</cell>
+    <cell row="15" col="U">$usSum.sellAmount</cell>
+    <cell row="15" col="V">$usSum.sellExcise</cell>
+    <cell row="15" col="W">$usSum.grossMargin</cell>
+    <cell row="15" col="X">$usSum.grossProfit</cell>
+    <cell row="16" col="L">$cnSum.requireAmount</cell>
+    <cell row="16" col="U">$cnSum.sellAmount</cell>
+    <cell row="16" col="V">$cnSum.sellExcise</cell>
+    <cell row="16" col="W">$cnSum.grossMargin</cell>
+    <cell row="16" col="X">$cnSum.grossProfit</cell>
+  </cells>
+  
+  <list name="invoices" begin_row="8">
+    <cell col="B"></cell>
+    <cell>$sheet.customerName</cell>
+    <cell>$sheet.supplierName</cell>
+    <cell>$sheet.modeCd</cell>
+    <cell>$sheet.xinanOrderDate</cell>
+    <cell>$sheet.orderQuantity</cell>
+    <cell>$sheet.orderAmount</cell>
+    <cell>$sheet.adjustAmount</cell>
+    <cell>$sheet.orderExcise</cell>
+    <cell>$sheet.deliveryAmount</cell>
+    <cell>$sheet.requireAmount</cell>
+    <cell>$sheet.payAmounts</cell>
+    <cell>$sheet.payDates</cell>
+    <cell>$sheet.deliveryDate</cell>
+    <cell></cell>
+    <cell>$sheet.customerName</cell>
+    <cell>$sheet.invoiceCd</cell>
+    <cell>$sheet.tradingNo</cell>
+    <cell>$sheet.sellDate</cell>
+    <cell>$sheet.sellAmount</cell>
+    <cell>$sheet.sellExcise</cell>
+    <cell>$sheet.grossMargin</cell>
+    <cell>$sheet.grossProfit</cell>
+    <cell>$sheet.receivedDate</cell>
+    <cell>$sheet.receivedAmount</cell>
+  </list>
+</sheet>
+</report>

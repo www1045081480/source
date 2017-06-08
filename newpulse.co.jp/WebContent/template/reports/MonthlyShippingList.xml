@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<report template="MonthlyShippingList.xlsx">
+<sheet name="出荷済み一覧">
+  <cells>
+    <cell row="1" col="D">$yyyymm</cell>
+    <cell row="3" col="C">$user.JpName</cell>
+    <cell row="4" col="C">$createDate</cell>
+  </cells>
+  
+  <list name="shippings" begin_row="7">
+    <cell col="B">$sheet.customerName</cell>
+    <cell>$sheet.categoryType</cell>
+    <cell>$sheet.sellAmountOfThisMonth</cell>
+    <cell>$sheet.depositAmount</cell>
+    <cell>$sheet.balance</cell>
+    <cell>$sheet.balanceOfDollar</cell>
+    <cell>$sheet.balanceOfChinese</cell>
+    <cell>$sheet.estimationCdAmount</cell>
+  </list>
+</sheet>
+</report>

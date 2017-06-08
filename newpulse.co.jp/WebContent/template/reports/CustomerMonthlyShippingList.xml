@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<report template="CustomerMonthlyShippingList.xlsx">
+<sheet name="发货一览表">
+  <cells>
+    <cell row="1" col="C">$yyyymm</cell>
+    <cell row="3" col="C">$user.JpName</cell>
+    <cell row="4" col="C">$createDate</cell>
+    <cell row="6" col="C">$customerName</cell>
+  </cells>
+  
+  <list name="shippings" begin_row="9">
+    <cell col="B">$sheet.deliveryDate</cell>
+    <cell>$sheet.orderNo</cell>
+    <cell>$sheet.xinanOrderNo</cell>
+    <cell>$sheet.content</cell>
+    <cell>$sheet.earningAmount</cell>
+    <cell>$sheet.receivedAmount</cell>
+    <cell>$sheet.receiveAmount</cell>
+    <cell>$sheet.endingBalance</cell>
+    <cell>$sheet.tradingNo</cell>
+    <cell>$sheet.note</cell>
+  </list>
+</sheet>
+</report>

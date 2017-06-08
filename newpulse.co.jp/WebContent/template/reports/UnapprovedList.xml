@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<report template="UnapprovedList.xlsx">
+<sheet name="未承認見積書">
+  <cells>
+    <cell row="3" col="C">$user.JpName</cell>
+    <cell row="4" col="C">$createDate</cell>
+  </cells>
+  
+  <list name="estimations" begin_row="7">
+    <cell col="B">$sheet.EstimationCd</cell>
+    <cell>$sheet.estimationCd</cell>
+    <cell>$sheet.issueDate</cell>
+    <cell>$sheet.customerName</cell>
+    <cell>$sheet.name</cell>
+    <cell>$sheet.modelCd</cell>
+    <cell>$sheet.quantity</cell>
+    <cell>$sheet.amount</cell>
+    <cell>$sheet.arriveDate</cell>
+    <cell>$sheet.patment</cell>
+    <cell>$sheet.approvedStates</cell>
+  </list>
+</sheet>
+
+<sheet name="未承認注文書">
+  <cells>
+    <cell row="3" col="C">$user.JpName</cell>
+    <cell row="4" col="C">$createDate</cell>
+  </cells>
+  
+  <list name="orders" begin_row="7">
+    <cell col="B">$sheet.EstimationCd</cell>
+    <cell>$sheet.orderCd</cell>
+    <cell>$sheet.issueDate</cell>
+    <cell>$sheet.supplierName</cell>
+    <cell>$sheet.name</cell>
+    <cell>$sheet.modelCd</cell>
+    <cell>$sheet.quantity</cell>
+    <cell>$sheet.amount</cell>
+    <cell>$sheet.arriveDate</cell>
+    <cell>$sheet.patment</cell>
+    <cell>$sheet.approvedStates</cell>
+  </list>
+</sheet>
+
+</report>

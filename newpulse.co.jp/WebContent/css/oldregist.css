@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+
+/*--------------------------------------------------------------------------------
+	共通設定
+--------------------------------------------------------------------------------*/
+label {
+	cursor: pointer;
+}
+
+.regist #regist_title,
+.regist_check #registcheck_title,
+.regist_1stfinish #regist_1stfinish_title,
+.addinfo #addinfo_title,
+.addinfo_check #addinfocheck_title,
+.nom .regist,
+.nom .regist_check,
+.nom .regist_1stfinish {
+	margin: 20px auto;
+	border: solid 1px #CCCCCC;		
+	border-radius: 0 0 0 0;
+	-moz-border-radius: 0 0 0 0;
+	-webkit-border-radius: 0 0 0 0;
+}
+
+.nom .regist h2,
+.nom .regist_check h2,
+.nom .regist_1stfinish h2 {
+	padding: 1px;
+}
+
+
+/*--------------------------------------------------------------------------------
+	新規Webユーザー登録
+--------------------------------------------------------------------------------*/
+
+.regist,
+.regist_check,
+.addinfo,
+.addinfo_check {
+	margin: 20px auto 0;
+	width: 700px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background-color: #FFFFFF;
+}
+
+.nom .regist,
+.nom .regist_check {
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	background-color: #FFFFFF;
+}
+
+.regist #regist_cont,
+.regist_check #registcheck_cont,
+.addinfo #addinfo_cont,
+.addinfo_check #addinfocheck_cont {
+	margin:30px 0;
+	padding:0 50px;
+	width: 600px !important;
+	width: 700px;
+	min-height:400px;  
+	height:auto !important;  
+	height:400px;
+	text-align: left;
+}
+
+
+.regist #regist_cont .top_text,
+.regist_check #registcheck_cont .top_text,
+.addinfo #addinfo_cont .top_text,
+.addinfo_check #addinfocheck_cont .top_text {
+	font-size: 90%;
+	text-align: left;
+	margin-bottom:20px;
+}
+
+.regist #regist_cont table.regist_tbl,
+.regist_check #registcheck_cont table.regist_tbl,
+.addinfo #addinfo_cont table.regist_tbl,
+.addinfo_check #addinfocheck_cont table.regist_tbl {
+	margin-top: 10px;
+	width: 600px;
+	border-collapse: collapse;
+}
+
+.regist #regist_cont table.regist_tbl th,
+.regist_check #registcheck_cont table.regist_tbl th,
+.addinfo #addinfo_cont table.regist_tbl th,
+.addinfo_check #addinfocheck_cont table.regist_tbl th {
+	padding: 10px 40px 10px 10px;
+	width: 100px;
+	font-size: 90%;
+	font-weight: bold;
+	color: #005785;
+	background-color: #F2FBFF;
+	border: solid 1px #CCCCCC;
+	text-align: left;
+	vertical-align: top;
+}
+
+.regist #regist_cont table.regist_tbl td,
+.regist_check #registcheck_cont table.regist_tbl td,
+.addinfo #addinfo_cont table.regist_tbl td,
+.addinfo_check #addinfocheck_cont table.regist_tbl td {
+	padding:7px;
+	width: 433px;
+	border: solid 1px #CCCCCC;
+}
+
+.regist #regist_cont table.regist_tbl th.req,
+.regist_check #registcheck_cont table.regist_tbl th.req,
+.addinfo #addinfo_cont table.regist_tbl th.req {
+	background:#F2FBFF url(//pgm-images.s3.amazonaws.com/images/regist/icn_regist_req.png) no-repeat 115px 11px;
+}
+
+.regist #regist_cont table.regist_tbl ul.name_td_ul li {
+	float: left;
+	padding-right: 20px;
+}
+
+.regist #regist_cont table.regist_tbl ul.name_td_ul input {
+	margin-left: 5px;
+	width: 135px;
+}
+
+.regist #regist_cont table.regist_tbl ul.name_td_ul .sample {
+	font-size: 85%;
+	margin: 3px 0 0 20px;
+}
+
+.regist #regist_cont table.regist_tbl p.note {
+	margin-top:3px;
+	padding-left:1.0em;
+	text-indent:-1.0em;
+	font-size: 85%;
+	color:#CC0000;
+}
+
+.regist #regist_cont table.regist_tbl .sample2,
+.addinfo #addinfo_cont table.regist_tbl .sample2 {
+	font-size: 85%;
+	margin: 3px 0 0 3px;
+}
+
+.regist #regist_cont table.regist_tbl .tel_form {
+	width: 235px;
+}
+
+.regist #regist_cont table.regist_tbl .form_right_text {
+	margin-left: 5px;
+	font-size: 85%;
+}
+
+.regist #regist_cont table.regist_tbl .mail_form {
+	width: 285px;
+}
+
+.regist #regist_cont table.regist_tbl .password_form {
+	width: 115px;
+}
+
+.regist #regist_cont table.regist_tbl ul.mailmagazine_ul {
+	padding-bottom: 15px;
+}
+
+.regist #regist_cont table.regist_tbl ul.mailmagazine_ul li {
+	margin-top: 5px;
+}
+
+.regist #regist_cont table.regist_tbl ul.mailmagazine_ul input {
+	margin: 0 3px !important;
+	margin: 0;
+	padding: 0 3px;
+	vertical-align: middle;
+}
+
+
+
+
+/*----------------------------------------------------
+　フォーム確認画面
+----------------------------------------------------*/
+
+
+.regist_check #registcheck_cont .registcheck_bottom_text {
+	margin-top: 20px;
+	padding: 0 10px 0 35px;
+	background: url(//pgm-images.s3.amazonaws.com/images/regist/icn_mail.png) left top no-repeat;
+}
+
+.regist_check #registcheck_cont table.regist_tbl ul.mailmagazine_ul_check li {
+	margin-bottom: 3px;
+}
+
+
+.regist_check #registcheck_cont .bottom_btn_box,
+.addinfo_check #addinfocheck_cont .bottom_btn_box {
+	position: relative;
+	margin-top: 20px;
+	width: 600px;
+}
+
+.regist_check #registcheck_cont .bottom_btn,
+.addinfo_check #addinfocheck_cont .bottom_btn {
+	text-align: center;
+}
+
+.regist_check #registcheck_cont .bottom_btn_fix,
+.addinfo_check #addinfocheck_cont .bottom_btn_fix {
+	position: absolute;
+	top:0px;
+	left:0px;
+}
+
+.regist_check .roll {
+	cursor: pointer;
+}
+

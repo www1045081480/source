@@ -1,0 +1,42 @@
+@charset "utf-8";
+@media print {
+    html, body {
+        width: 210mm;
+        height: 297mm;
+        font: 16pt;
+        font-weight: bold;
+    }
+    input, textarea, table, tr, td {
+        font: 16pt;
+        font-weight: bold;
+    }
+.noprint { display:none; }
+.sNoDisplay { display:none; }
+#header { display:none; }
+#footer { display:none; }
+#outbutton { display:none; }
+#navigation, #rightSideBar, #leftSideBar
+{ display:none; }
+
+input,select{
+    border: none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+
+/*報価単*/
+#maxbt { display:none; }
+#minbt { display:none; }
+#btx   { display:none; }
+}
+
+@media screen {
+    .stable {
+        width: 970px;
+    }
+    .sform {
+        width: 850px;
+    }
+    .sNoDisplay { display:none; }
+}

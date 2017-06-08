@@ -1,0 +1,217 @@
+@charset "UTF-8";
+
+/* quote 関連使用CSS　ここから*/
+.colorInput{
+	background-color:#CDFFFF;
+}
+#floatPanel .ctrolPanel{
+			width:100px;
+			height:206px;
+			background:no-repeat left top;
+			border:solid 0px #ddd;
+			position:fixed;
+			right:500px;
+			top:100px;
+		}
+		#floatPanel .ctrolPanel a{
+			width:34px;
+			font-size:12px;
+			color:#ff6600;
+			letter-spacing:1px;
+			text-align:center;
+			overflow:hidden;
+			text-decoration:none;
+			}
+		#floatPanel .ctrolPanel .arrow{
+			height:75px;
+			line-height:28px;
+			display:block;
+			margin:1px auto;
+			}
+		
+		#floatPanel .ctrolPanel .contact{
+			height:95px;
+			width:100px;
+			display:block;
+			}
+.box{
+	padding: 5px;
+	boder:10px;
+	border-radius: 10px;
+	background: white;
+	font-size: 0.8em;
+}
+#qtitle{
+	border: 0px solid green;
+	width:500px;
+	font-size:25px;
+	font-weight:bold;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 5px;
+}
+#sendtime, #narutime, #yxtime {
+	border:0px solid;
+	font-size:1em;
+	font-weight:bold;
+	width:100px
+}
+.binput{
+	border:0px solid;
+	width:220px;
+	
+}
+.cinput{
+	border:0px solid;
+	width:140px;
+}
+.dinput{
+	border:0px solid;
+	width:400px;
+}
+.einput{
+	border:0px solid;
+	font-weight:bold;
+	font-size:1.1em;
+	width:400px;
+}
+.finput{
+	border:0px solid;
+	width:500px;
+}
+.ginput{
+	border:0px solid;
+	width:280px;
+	background-color:#CDFFFF;
+}
+.hinput{
+	border:0px solid;
+	width:50px;
+	text-align:right;
+	background-color:#CDFFFF;
+}
+.iinput{
+	border:0px solid;
+	width:30px;
+	text-align:center;
+	background-color:#CDFFFF;
+}
+.no{
+	border:0px solid;
+	width:30px;
+	text-align:center;
+}
+.jinput{
+	border:0px solid;
+	width:80px;
+	text-align:right;
+	background-color:#CDFFFF;
+}
+.kinput{
+	border:0px solid;
+	width:120px;
+}
+
+#thead td{
+	font-weight:bold;
+	text-align:center;
+}
+.spname{
+	border:0px solid;
+	overflow-y:hidden; 
+	height:20px;
+	background-color:#CDFFFF;
+}
+.area{
+	border:0px solid;
+	background-color:#CDFFFF;
+	height:20px;
+	overflow-y:visible;
+}
+.je,#hjsum{
+	text-align:right;
+}
+
+	#div2{
+			border: 0px solid ;
+			border-left:0px;
+			border-right:0px;
+			
+			width : 1450px;
+			background-color:white;
+			margin-left:auto;
+			margin-right:auto;
+        }
+    #div1{
+			background-color:white;
+			margin-left:auto;
+			margin-right:auto;
+			border:0px solid;
+        }
+   #table1 tr td{
+        	border-bottom:1px solid;
+        	border-left:1px solid;
+        }
+   #userbody {
+			PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: ;PADDING-TOP: 0px;
+			background:#e7f7fa;
+		}
+	#floatPanel .ctrolPanel{
+			width:100px;
+			height:356px;
+			background: no-repeat left top;
+			border:solid 0px #ddd;
+			position:fixed;
+			right:500px;
+			top:100px;
+			z-index:10000;
+			}
+	#floatPanel .ctrolPanel a{
+			width:54px;
+			font-size:12px;
+			color:#ff6600;
+			letter-spacing:1px;
+			text-align:center;
+			overflow:hidden;
+			text-decoration:none;
+			}
+	#floatPanel .ctrolPanel .arrow{
+			height:75px;
+			line-height:28px;
+			display:block;
+			margin:1px auto;
+			}
+
+	#floatPanel .ctrolPanel .contact{
+			height:95px;
+			width:120px;
+			display:block;
+			}
+	#table1 tr{
+			height:35px;
+		}
+	#flip{
+			padding:20px;
+			text-align:center;
+			background-color:#e5eecc;
+			font-weight:bold;
+			font-size:18px;
+	}
+	#flip1{
+			text-align:left;
+			font-weight:bold;
+			font-size:12px;
+		}
+	#panel,#panel1{
+			padding:50px;
+			display:none;
+			border:solid 1px #c3c3c3;
+    }
+    
+    .imaxinput{
+	border:0px solid;
+	width:620px;
+	text-align:left;
+	background-color:#CDFFFF;
+}
+/* quote 関連使用CSS　ここまで*/

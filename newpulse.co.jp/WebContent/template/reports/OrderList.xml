@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<report template="OrderList.xlsx">
+
+<sheet name="注文実績一覧">
+  <cells>
+    <cell row="3" col="C">$user.JpName</cell>
+    <cell row="4" col="C">$createDate</cell>
+  </cells>
+  
+  <list name="orders" begin_row="7">
+    <cell col="B">$sheet.orderCd</cell>
+    <cell>$sheet.issueDate</cell>
+    <cell>$sheet.supplierName</cell>
+    <cell>$sheet.modelCd</cell>
+    <cell>$sheet.categoryType</cell>
+    <cell>$sheet.amount</cell>
+    <cell>$sheet.deliveryDate</cell>
+    <cell>$sheet.payment</cell>
+    <cell>$sheet.status</cell>
+  </list>
+</sheet>
+</report>
